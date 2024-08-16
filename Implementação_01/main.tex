@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Implementação 1}
+\author{Bruno Braga Guimarães Alves}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Dados do Aluno}
+\begin{itemize}
+    \item Nome: Bruno Braga Guimarães Alves
+    \item Matrícula: 767681
+    \item Curso: Ciência da Computação
+\end{itemize}
+
+\section*{Descrição do Projeto}
+Este projeto busca implementar o que foi solicitado no exercício "Implementação 1".
+
+\section*{Lista Encadeada}
+
+\subsection*{Estrutura do Código}
+\begin{itemize}
+    \item \textbf{Classe No:}
+    \begin{itemize}
+        \item Representa um nó da lista encadeada.
+        \item Cada nó possui dois atributos:
+        \begin{itemize}
+            \item \textbf{elemento:} Armazena o valor do nó.
+            \item \textbf{proximo:} Um ponteiro para o próximo nó na lista.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Classe Lista:}
+    \begin{itemize}
+        \item Gerencia a lista encadeada como um todo.
+        \item Atributo:
+        \begin{itemize}
+            \item \textbf{raiz:} Um ponteiro para o primeiro nó (cabeça) da lista.
+        \end{itemize}
+        \item Métodos:
+        \begin{itemize}
+            \item Possui 3 métodos para Inserção:
+            \begin{itemize}
+                \item \textbf{Inserir:} Insere o elemento em ordem crescente.
+                \item \textbf{InserirInicio:} Insere o elemento no início.
+                \item \textbf{InserirFim:} Percorre a lista para inserir o elemento no fim.
+            \end{itemize}
+            \item Possui 3 métodos para Remoção:
+            \begin{itemize}
+                \item \textbf{Remover:} Remove o nó na posição especificada.
+                \item \textbf{RemoverInicio:} Muda o elemento da raiz para o nó "próximo", removendo e retornando o valor do primeiro nó.
+                \item \textbf{RemoverFim:} Percorre a lista até remover e retornar o valor do último nó.
+            \end{itemize}
+            \item \textbf{Mostrar:} Retorna os valores contidos na lista.
+            \item \textbf{Buscar:} Procura e retorna o valor desejado.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Pilha}
+
+\subsection*{Estrutura do Código}
+\begin{itemize}
+    \item \textbf{Classe No:}
+    \begin{itemize}
+        \item Representa um nó da pilha.
+        \item Atributos:
+        \begin{itemize}
+            \item \textbf{elemento:} Armazena o valor do nó.
+            \item \textbf{proximo:} Um ponteiro para o próximo nó na pilha.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Classe Pilha:}
+    \begin{itemize}
+        \item Atributo:
+        \begin{itemize}
+            \item \textbf{raiz:} Um ponteiro para o primeiro nó da pilha.
+        \end{itemize}
+        \item Métodos:
+        \begin{itemize}
+            \item \textbf{Inserir:} Insere um novo elemento no topo da pilha.
+            \item \textbf{Remover:} Remove o elemento do topo da pilha.
+            \item Outros métodos podem existir para operações adicionais, como visualizar o topo da pilha ou verificar se a pilha está vazia.
+            \item \textbf{Mostrar:} Retorna os valores contidos na pilha.
+            \item \textbf{Buscar:} Procura e retorna o valor desejado.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Matriz}
+
+\subsection*{Estrutura do Código}
+\begin{itemize}
+    \item \textbf{Definições e Includes:}
+    \begin{itemize}
+        \item \textbf{NUM\_LIN} e \textbf{NUM\_COL} definem as dimensões da matriz (3x3).
+        \item Inclui bibliotecas padrão como \texttt{iostream}, \texttt{string} e \texttt{stdexcept}.
+    \end{itemize}
+    \item \textbf{Classe Matriz:}
+    \begin{itemize}
+        \item Atributo:
+        \begin{itemize}
+            \item \textbf{matriz[NUM\_LIN][NUM\_COL]:} Um array 2D para armazenar os valores da matriz.
+        \end{itemize}
+        \item Métodos:
+        \begin{itemize}
+            \item \textbf{preencherMatriz:} Preenche a matriz com valores inseridos pelo usuário.
+            \item \textbf{exibirMatriz const:} Exibe os valores da matriz no console.
+            \item \textbf{identificaElemento:} Identifica a posição de um elemento específico na matriz.
+            \item \textbf{RemoveElemento:} Remove o elemento especificado da matriz, substituindo-o por \texttt{-1}.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\section*{Fila}
+
+\subsection*{Estrutura do Código}
+\begin{itemize}
+    \item A classe \textbf{No} representa cada elemento da fila.
+    \begin{itemize}
+        \item Atributos:
+        \begin{itemize}
+            \item \textbf{int elemento:} Armazena o valor do nó.
+            \item \textbf{No *proximo:} Ponteiro para o próximo nó na fila.
+        \end{itemize}
+        \item Construtor:
+        \begin{itemize}
+            \item \textbf{No(int elemento):} Inicializa o nó com um valor e define o ponteiro \textbf{proximo} como \texttt{nullptr}.
+        \end{itemize}
+    \end{itemize}
+    \item A classe \textbf{Fila} representa a estrutura de dados fila, utilizando uma lista encadeada.
+    \begin{itemize}
+        \item Atributos:
+        \begin{itemize}
+            \item \textbf{No *raiz:} Ponteiro para o primeiro nó da fila.
+        \end{itemize}
+        \item Métodos:
+        \begin{itemize}
+            \item \textbf{Inserir:} Insere um novo elemento na fila, criando um novo nó.
+            \item \textbf{Remover:} Remove o primeiro elemento da fila. Salva o elemento do primeiro nó, avança a raiz para o próximo nó e deleta o nó antigo.
+            \item \textbf{Mostrar:} Exibe todos os elementos da fila.
+            \item \textbf{Buscar:} Procura e retorna o valor desejado.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
