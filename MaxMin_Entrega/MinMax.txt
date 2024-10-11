@@ -1,0 +1,81 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\title{Documentação de Implementação de Algoritmos}
+\author{Bruno Braga - 767681}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+Esta documentação explica o funcionamento e as especificações de três algoritmos implementados em C++. Todos eles lidam somente com grafos direcionados e ponderados com valores positivos. Os algoritmos abordados são:
+
+\begin{itemize}
+    \item Algoritmo de Dijkstra
+    \item Algoritmo de Dijkstra (MinMax)
+    \item Algoritmo de Dijkstra (MaxMin)
+\end{itemize}
+
+\section{Algoritmo de Dijkstra}
+
+O algoritmo de Dijkstra é utilizado para encontrar o menor caminho entre um nó inicial e todos os outros nós de um grafo.
+
+\subsection{Explicação}
+
+\begin{itemize}
+    \item Inicializa o grafo e os vetores de distâncias e antecessores.
+    \item Insere o vértice inicial na fila de prioridade com distância 0.
+    \item Em cada iteração, retira o vértice com menor distância e atualiza as distâncias dos vértices adjacentes.
+    \item Repete o processo até que o destino seja alcançado ou a fila esteja vazia.
+    \item Por fim, constrói o caminho mínimo de volta utilizando o vetor de antecessores.
+\end{itemize}
+
+\section{Algoritmo MaxMin}
+
+O algoritmo MaxMin é uma variação de Dijkstra que procura calcular o máximo valor mínimo em um conjunto de dados. A lógica básica segue a estrutura de busca em grafos, com foco em garantir a propagação da menor capacidade da aresta, priorizando a maior capacidade dos caminhos possíveis.
+
+\subsection{Especificações}
+
+\begin{itemize}
+    \item Utiliza um vetor de distâncias para armazenar os valores máximos e mínimos calculados em cada iteração.
+    \item O grafo é representado de forma semelhante ao do algoritmo de Dijkstra.
+\end{itemize}
+
+\subsection{Explicação}
+
+\begin{enumerate}
+    \item Inicializa o grafo e os vetores de distâncias e antecessores.
+    \item Insere o vértice inicial na fila de prioridade com distância ∞.
+    \item Em cada iteração, propaga o vértice com menor peso, de forma que a menor capacidade se mantenha, dando prioridade para o caminho com maior capacidade.
+    \item Repete o processo até que o destino seja alcançado ou a fila esteja vazia.
+    \item Por fim, constrói o caminho mínimo de volta utilizando o vetor de antecessores.
+\end{enumerate}
+
+\section{Algoritmo MinMax}
+
+O algoritmo MinMax visa calcular o menor valor máximo. A lógica básica segue a estrutura de busca em grafos, com foco em garantir a propagação da maior capacidade da aresta, priorizando a menor capacidade dos caminhos possíveis. Esse tipo de algoritmo é muito útil em problemas de otimização onde se deseja minimizar a maior perda possível.
+
+\subsection{Especificações}
+
+\begin{itemize}
+    \item Utiliza técnicas similares ao algoritmo MaxMin, mas com um foco inverso.
+    \item O vetor de distâncias mantém o menor valor máximo possível em cada iteração.
+\end{itemize}
+
+\subsection{Explicação}
+
+\begin{enumerate}
+    \item Inicializa o grafo e os vetores de distâncias e antecessores.
+    \item Insere o vértice inicial na fila de prioridade com distância -∞.
+    \item Em cada iteração, propaga o vértice com maior peso, de forma que a maior capacidade se mantenha, dando prioridade para o caminho com menor capacidade.
+    \item Repete o processo até que o destino seja alcançado ou a fila esteja vazia.
+    \item Por fim, constrói o caminho mínimo de volta utilizando o vetor de antecessores.
+\end{enumerate}
+
+\end{document}
